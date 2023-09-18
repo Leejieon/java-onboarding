@@ -40,14 +40,12 @@ class Problem1 {
         }
     }
 
-    public static int addDigit(List<Integer> page) {
+    public static int addDigit(int page) {
         int sum = 0;
-        for (int i = 0; i < 2; i++) {
-            int digit = page.get(i);
-            while (digit > 0) {
-                sum += digit%10;
-                digit /= 10;
-            }
+        int digit = page;
+        while (digit > 0) {
+            sum += digit%10;
+            digit /= 10;
         }
 
         return sum;
