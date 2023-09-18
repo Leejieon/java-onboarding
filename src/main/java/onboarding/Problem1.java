@@ -11,7 +11,6 @@ class Problem1 {
         if (isException(pobi) || isException(crong)) {
             return -1;
         }
-
         return answer;
     }
 
@@ -60,5 +59,12 @@ class Problem1 {
         }
 
         return sum;
+    }
+
+    public static int getMaxNumber(List<Integer> page) {
+        int leftMax = Math.max(addDigit(page.get(0)), multiDigit(page.get(0)));
+        int rightMax = Math.max(addDigit(page.get(1)), multiDigit(page.get(1)));
+
+        return Math.max(leftMax, rightMax);
     }
 }
