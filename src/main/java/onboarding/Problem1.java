@@ -11,6 +11,9 @@ class Problem1 {
         if (isException(pobi) || isException(crong)) {
             return -1;
         }
+
+        answer = getWinner(pobi, crong);
+
         return answer;
     }
 
@@ -66,5 +69,19 @@ class Problem1 {
         int rightMax = Math.max(addDigit(page.get(1)), multiDigit(page.get(1)));
 
         return Math.max(leftMax, rightMax);
+    }
+
+    public static int getWinner(List<Integer> player1, List<Integer> player2) {
+
+        int player1Max = getMaxNumber(player1);
+        int player2Max = getMaxNumber(player2);
+
+        if (player1Max == player2Max) {
+            return 0;
+        } else if (player1Max > player2Max) {
+            return 1;
+        } else {
+            return 2;
+        }
     }
 }
