@@ -50,4 +50,15 @@ class Problem1 {
 
         return sum;
     }
+
+    public static int multiDigit(int page) {
+        int sum = 0;
+        int digit = page;
+        while (digit > 0) {
+            sum += digit%10;
+            digit /= 10;
+        }
+
+        return sum;
+    }
 }
