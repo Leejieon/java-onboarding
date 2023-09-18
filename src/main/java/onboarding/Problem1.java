@@ -34,7 +34,7 @@ class Problem1 {
             return true;
         }
         // 4. 왼쪽이 홀수, 오른쪽이 짝수가 아닌 경우
-        else if ( (left % 2) != 1 || (right & 2) != 0) {
+        else if ( (left % 2) != 1 || (right % 2) != 0) {
             return true;
         }
         else {
@@ -54,10 +54,10 @@ class Problem1 {
     }
 
     public static int multiDigit(int page) {
-        int sum = 0;
+        int sum = 1;
         int digit = page;
         while (digit > 0) {
-            sum += digit%10;
+            sum *= digit%10;
             digit /= 10;
         }
 
