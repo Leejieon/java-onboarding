@@ -33,4 +33,14 @@ public class Problem2 {
         return cryptogram;
     }
 
+    static String removeDuplicateChar(String cryptogram, int start, int end) {
+        StringBuilder sb = new StringBuilder(cryptogram);
+
+        // 해당 start ~ end 위치 문자열 삭제
+        for (int i = start; start < end; start++) {
+            sb.deleteCharAt(i);
+        }
+
+        return sb.toString();
+    }
 }
