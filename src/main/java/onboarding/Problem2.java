@@ -2,8 +2,20 @@ package onboarding;
 
 public class Problem2 {
     public static String solution(String cryptogram) {
-        String answer = "answer";
-        return answer;
+        String prevString = cryptogram;
+
+        while (true) {
+            cryptogram = findDuplicateChar(cryptogram);
+
+            // 결과가 빈 문자열이거나, 이전과 같은 경우, 종료
+            if (cryptogram.equals("") || cryptogram.equals(prevString)) {
+                break;
+            }
+
+            prevString = cryptogram;
+        }
+
+        return cryptogram;
     }
 
     static String findDuplicateChar(String cryptogram) {
@@ -15,13 +27,11 @@ public class Problem2 {
 
                     // end index 가 문자열 마지막에 도달했을 경우.
                     if (end == cryptogram.length() - 1) {
-                        // TODO : 중복 문자 제거 메서드 추가
                         cryptogram = removeDuplicateChar(cryptogram, start, end + 1);
                     }
                 }
                 else {
                     if (isDuplicate) {
-                        // TODO : 중복 문자 제거 메서드 추가
                         cryptogram = removeDuplicateChar(cryptogram, start, end);
                         start -= 1;
                     }
